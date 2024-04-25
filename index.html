@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Latihan Dari Sir Anas</title>
+	<style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+
+        @property --gradient-angle {
+            syntax: "<angle>";
+            initial-value: 0deg;
+            inherits: false;
+        }
+
+        :root {
+            --clr-1: rgb(42, 45, 52);
+            --clr-2: rgb(0, 157, 220);
+            --clr-3: rgb(242, 100, 48);
+            --clr-4: rgb(103, 97, 168);
+            --clr-5: rgb(0, 155, 114);
+        }
+
+        body {
+            width: 100%;
+            background: var(--clr-2);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .kartu {
+            height: calc(100vh - 200px);
+            aspect-ratio: 1 / 1.5;
+            background: var(--clr-1);
+            border-radius: 0.5rem;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+
+        .kartu > h3{
+            color: white;
+        }
+
+        .kartu::before,
+        .kartu::after {
+            content: "";
+            position: absolute;
+            inset: -0.5rem;
+            z-index: -1;
+            background: conic-gradient(
+                from var(--gradient-angle),
+                var(--clr-3),
+                var(--clr-4),
+                var(--clr-5),
+                var(--clr-4),
+                var(--clr-3)
+            );
+            border-radius: inherit;
+            animation: rotation 20s linear infinite;
+        }
+
+        .kartu::after {
+            filter: blur(3.5rem);
+        }
+
+        @keyframes rotation {
+            0% {
+                --gradient-angle: 0deg;
+            }
+            100% {
+                --gradient-angle: 360deg;
+            }
+        }
+
+        .nav{
+            width: 90%;
+            height: 50px;
+            margin: 10px;
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        a{
+            text-decoration: none;
+            color: aliceblue;
+        }
+
+        footer{
+            width: 100%;
+            background-color: gray;
+            height: 200px;
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        footer > h3{
+            border-bottom: 2px solid burlywood;
+            color: bisque;
+            width: fit-content;
+        }
+
+        footer > a{
+            font-size: larger;
+        }
+	</style>
+</head>
+<body>
+
+    <div class="nav">
+        <a href="#">Whatsapp</a>
+
+        <a href="#">Telegram</a>
+
+        <a href="#">Discord</a>
+
+        <a href="#">Line</a>
+    </div>
+
+    <div class="kartu">
+        <h3>Sedia Jasa Bikin Web</h3>
+
+        <h3>Harga Boleh Nego!!!</h3>
+
+        <h3>Revisi Sesuka Hati</h3>
+
+        <h3>Enak Dilihat</h3>
+
+        <h3>Kualitas Dijamin Sir Anas </h3>
+    </div>
+
+    <footer>
+        <h3>Pembayaran</h3>
+
+        <a href="#">Dana</a>
+        <a href="#">gopay</a>
+        <a href="#">Ovo</a>
+        <a href="#">Transfer</a>
+    </footer>
+</body>
+</html>
